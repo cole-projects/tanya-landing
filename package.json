@@ -1,0 +1,26 @@
+{
+  "name": "tanya-landing",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "gen:vcf": "node scripts/gen-tanya-vcf.mjs",
+    "deploy": "npm run build && npx vercel deploy --prod"
+  },
+  "dependencies": {
+    "framer-motion": "^11.18.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.19"
+  }
+}

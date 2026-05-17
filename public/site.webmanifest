@@ -1,0 +1,17 @@
+{
+  "name": "TanyaTalk",
+  "short_name": "TanyaTalk",
+  "description": "The conversation that changes your day. Add contact, learn about TanyaTalk, and meet Tanya.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f1f6f4",
+  "theme_color": "#e8f2f0",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
