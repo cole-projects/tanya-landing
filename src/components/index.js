@@ -1,4 +1,5 @@
 export { default as AuroraBackdrop } from "./AuroraBackdrop.jsx";
+export { default as BrandedSpiralLoader } from "./BrandedSpiralLoader.jsx";
 export { default as GlassPanel, MotionGlassPanel } from "./GlassPanel.jsx";
 export { default as HeroIntro } from "./HeroIntro.jsx";
 export { default as LandingHeroCard } from "./LandingHeroCard.jsx";

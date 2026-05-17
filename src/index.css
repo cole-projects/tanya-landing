@@ -722,3 +722,29 @@
   border-radius: 999px;
   opacity: 0.35;
 }
+
+/* Pre-app and in-app: hand-drawn spiral art (public/loading-spiral.png) */
+@keyframes initial-splash-spiral-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.initial-splash-spiral {
+  width: 5rem;
+  height: auto;
+  max-height: 4.65rem;
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  animation: initial-splash-spiral-rotate 1.35s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .initial-splash-spiral {
+    animation: none;
+    opacity: 0.9;
+  }
+}
