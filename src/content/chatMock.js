@@ -15,7 +15,7 @@ export const CHAT_MOCK_MESSAGES = [
   {
     from: "user",
     kind: "text",
-    text: "Hey Tanya, I know what I need to do. I just can't make myself do it.",
+    text: "Hey Tanya, how do i relax without feeling guilty or lazy?",
   },
   {
     from: "coach",
