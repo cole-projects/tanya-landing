@@ -98,27 +98,29 @@ export default function LearnMoreAccordion() {
               decoding="async"
             />
             <p className="mx-auto max-w-xl text-base leading-relaxed text-sea-800/92 sm:text-[1.05rem]">
-              Tanya is a master level life coach whose work lives at the
-              intersection of mindset, nervous system awareness, and identity
-              transformation. She doesn&apos;t just help people think
-              differently, she helps them become someone who naturally thinks,
-              feels, and acts from a different place.
+              Tanya is a master level life coach whose work blends neuroscience,
+              nervous system awareness, mindset, and identity transformation.
+              Tanya doesn&apos;t just help you think differently, she helps you
+              experience life through a completely different lens, allowing you
+              to show up empowered in every area of your life.
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-6 sm:text-[1.05rem]">
-              <span className="font-semibold text-sea-900">Her core belief:</span>{" "}
-              people stay stuck not from a lack of information or willpower, but
-              because their identity and beliefs haven&apos;t caught up to what
-              they consciously want. Her job is to close that gap.
+              <span className="font-semibold text-sea-900">Her Core Belief:</span>{" "}
+              Your alignment begins the moment you stop outsourcing your peace,
+              worth, and happiness to the outside world.
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-6 sm:text-[1.05rem]">
-              What makes her distinct is the warmth she brings to that work. She
-              coaches from beside you, not above you. She holds space for how
-              hard something is while holding the vision of who you&apos;re
-              becoming at the same time.
+              When the life you want and the identity you hold don&apos;t fully
+              match yet, Tanya helps you close that gap. What makes her distinct
+              is how she does it. She coaches from beside you, not above you,
+              holding space for how hard something feels while helping you
+              reconnect to the version of yourself that already knows the way
+              forward.
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base font-semibold leading-relaxed text-sea-900 sm:mt-6 sm:text-[1.05rem]">
-              In one line: Tanya helps you become the version of yourself you
-              already know exists.
+              In one line: Tanya helps you listen to that little whisper in your
+              soul telling you that you were meant for something more...
+              let&apos;s go get it!!
             </p>
           </div>
         </ContentBlock>
