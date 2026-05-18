@@ -100,7 +100,7 @@ export default function LearnMoreAccordion() {
             <p className="mx-auto max-w-xl text-base leading-relaxed text-sea-800/92 sm:text-[1.05rem]">
               Tanya is a master level life coach whose work blends neuroscience,
               nervous system awareness, mindset, and identity transformation.
-              Tanya doesn&apos;t just help you think differently, she helps you
+              Tanya doesn&apos;t just help you think differently about your circumstances, she helps you
               experience life through a completely different lens, allowing you
               to show up empowered in every area of your life.
             </p>
