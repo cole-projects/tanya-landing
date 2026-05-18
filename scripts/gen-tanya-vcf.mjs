@@ -8,7 +8,7 @@ import fs from "fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const TEL = "+15623333333";
+const TEL = "+13177282783";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
