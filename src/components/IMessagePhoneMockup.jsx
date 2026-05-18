@@ -1,22 +1,86 @@
+import { useCallback, useEffect, useRef, useState } from "react";
 import { CHAT_MOCK_CONTACT, CHAT_MOCK_MESSAGES } from "../content/chatMock.js";
 
 /** Waveform bar heights (relative) for voice-note styling */
 const WAVE_BARS = [4, 7, 5, 9, 6, 8, 5, 7, 4, 6, 8, 5, 9, 6, 7, 5, 8, 6];
 
-function VoiceNoteBubble({ durationLabel }) {
-  return (
-    <div className="iphone-mockup__voice">
+function formatMmSs(seconds) {
+  if (!Number.isFinite(seconds)) return null;
+  const s = Math.floor(seconds);
+  const mm = Math.floor(s / 60);
+  const ss = s % 60;
+  return `${mm}:${ss.toString().padStart(2, "0")}`;
+}
+
+function VoiceNoteBubble({ durationLabel, audioSrc }) {
+  const audioRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+  const [displayDur, setDisplayDur] = useState(durationLabel);
+
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el || !audioSrc) return;
+    const onMeta = () => {
+      const f = formatMmSs(el.duration);
+      if (f) setDisplayDur(f);
+    };
+    el.addEventListener("loadedmetadata", onMeta);
+    return () => el.removeEventListener("loadedmetadata", onMeta);
+  }, [audioSrc]);
+
+  const toggle = useCallback(() => {
+    const el = audioRef.current;
+    if (!el || !audioSrc) return;
+    if (el.paused) {
+      void el.play().catch(() => {});
+    } else {
+      el.pause();
+    }
+  }, [audioSrc]);
+
+  const inner = (
+    <>
       <span className="iphone-mockup__voice-play" aria-hidden>
-        <span className="iphone-mockup__voice-play-icon" />
+        {playing ? (
+          <span className="iphone-mockup__voice-pause-icon" />
+        ) : (
+          <span className="iphone-mockup__voice-play-icon" />
+        )}
       </span>
       <div className="iphone-mockup__voice-wave" aria-hidden>
         {WAVE_BARS.map((h, i) => (
           <span key={i} style={{ height: `${h}px` }} />
         ))}
       </div>
-      <span className="iphone-mockup__voice-dur">{durationLabel}</span>
-      <span className="sr-only">Voice message, {durationLabel}</span>
-    </div>
+      <span className="iphone-mockup__voice-dur">{displayDur}</span>
+      <span className="sr-only">Voice message, {displayDur}</span>
+    </>
+  );
+
+  if (!audioSrc) {
+    return <div className="iphone-mockup__voice">{inner}</div>;
+  }
+
+  return (
+    <>
+      <audio
+        ref={audioRef}
+        src={audioSrc}
+        preload="metadata"
+        playsInline
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onEnded={() => setPlaying(false)}
+      />
+      <button
+        type="button"
+        className="iphone-mockup__voice iphone-mockup__voice--btn"
+        onClick={toggle}
+        aria-label={playing ? "Pause voice message" : "Play voice message"}
+      >
+        {inner}
+      </button>
+    </>
   );
 }
 
@@ -141,6 +205,7 @@ export default function IMessagePhoneMockup() {
                         <div className="iphone-mockup__recv-stack">
                           <VoiceNoteBubble
                             durationLabel={m.durationLabel ?? "0:21"}
+                            audioSrc={m.audioSrc}
                           />
                           {m.transcript ? (
                             <p className="iphone-mockup__bubble iphone-mockup__bubble--recv iphone-mockup__bubble--transcript">

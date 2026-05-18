@@ -21,6 +21,7 @@ export const CHAT_MOCK_MESSAGES = [
     from: "coach",
     kind: "voice",
     durationLabel: "0:18",
+    audioSrc: "/tanya-voice-note.mp3",
   },
   {
     from: "coach",

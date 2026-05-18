@@ -594,6 +594,23 @@
   border-bottom-left-radius: 4px;
 }
 
+.iphone-mockup__voice--btn {
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.iphone-mockup__voice--btn:focus-visible {
+  outline: 2px solid #007aff;
+  outline-offset: 2px;
+}
+
 .iphone-mockup__voice-play {
   flex-shrink: 0;
   width: 28px;
@@ -613,6 +630,24 @@
   border-width: 6px 0 6px 9px;
   border-color: transparent transparent transparent #007aff;
   margin-left: 3px;
+}
+
+.iphone-mockup__voice-pause-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 12px;
+  height: 10px;
+}
+
+.iphone-mockup__voice-pause-icon::before,
+.iphone-mockup__voice-pause-icon::after {
+  content: "";
+  width: 3px;
+  height: 10px;
+  background: #007aff;
+  border-radius: 1px;
 }
 
 .iphone-mockup__voice-wave {
