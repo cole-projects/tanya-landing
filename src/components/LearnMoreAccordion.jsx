@@ -73,7 +73,7 @@ export default function LearnMoreAccordion() {
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-6 sm:text-[1.05rem]">
               When you&apos;re stuck, overwhelmed, or ready to move but unsure
-              of the <span className="italic">how</span>. Tanya helps you name
+              of the <span className="italic">how</span>, Tanya helps you name
               the next step, like turning on a flashlight when the path is hard
               to read. No scheduling. No waiting. Just concierge-style support
               through decision points, identity wobbles, and life transitions.
