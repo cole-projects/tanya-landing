@@ -82,10 +82,10 @@ export default function LearnMoreAccordion() {
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-6 sm:text-[1.05rem]">
               Tanya helps you find clarity, make progress, and feel better doing
-              it, so you can create movement and regain trust in yourself.
-              TanyaTalk is here to help create forward movement, whether
-              you&apos;re working through something hard, building on something
-              good, or simply trying to move through life with more intention.
+              it, so you can create forward movement and regain trust in
+              yourself. Whether you&apos;re working through something hard,
+              building on something good, or simply trying to move through life
+              with more intention, TanyaTalk is built to meet you there.
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base font-semibold leading-relaxed text-sea-900 sm:mt-6 sm:text-[1.05rem]">
               That&apos;s TanyaTalk, right in your pocket!
