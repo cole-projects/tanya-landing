@@ -68,7 +68,8 @@ export default function LearnMoreAccordion() {
             <p className="mx-auto max-w-xl text-base leading-relaxed text-sea-800/92 sm:text-[1.05rem]">
               TanyaTalk is a personal coaching experience built on the full
               depth of Tanya&apos;s heart and master-level coaching expertise,
-              available 24/7.
+              available 24/7. If you want to live your life with more
+              intention, TanyaTalk is for you.
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-6 sm:text-[1.05rem]">
               When you&apos;re stuck, overwhelmed, or ready to move but unsure
@@ -82,6 +83,9 @@ export default function LearnMoreAccordion() {
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-6 sm:text-[1.05rem]">
               Tanya helps you find clarity, make progress, and feel better doing
               it, so you can create movement and regain trust in yourself.
+              TanyaTalk is here to help create forward movement, whether
+              you&apos;re working through something hard, building on something
+              good, or simply trying to move through life with more intention.
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base font-semibold leading-relaxed text-sea-900 sm:mt-6 sm:text-[1.05rem]">
               That&apos;s TanyaTalk, right in your pocket!
