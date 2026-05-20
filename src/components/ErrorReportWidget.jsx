@@ -53,15 +53,9 @@ export default function ErrorReportWidget() {
     <div ref={panelRef} className="fixed right-4 top-4 z-50">
       <button
         onClick={() => setOpen((o) => !o)}
-        aria-label="Report an issue"
-        className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-sea-600 shadow-md ring-1 ring-sea-200/70 backdrop-blur-md transition-opacity hover:opacity-80"
+        className="rounded-full bg-white/80 px-3.5 py-1.5 text-xs font-semibold text-sea-700 shadow-md ring-1 ring-sea-200/70 backdrop-blur-md transition-opacity hover:opacity-80"
       >
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
-          <path
-            d="M7.5 1a6.5 6.5 0 1 0 0 13A6.5 6.5 0 0 0 7.5 1ZM7 5a.5.5 0 0 1 1 0v3.5a.5.5 0 0 1-1 0V5Zm.5 6a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
-            fill="currentColor"
-          />
-        </svg>
+        Report an issue
       </button>
 
       <AnimatePresence>
