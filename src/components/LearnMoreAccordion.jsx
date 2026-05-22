@@ -122,7 +122,7 @@ export default function LearnMoreAccordion() {
               forward.
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base font-semibold leading-relaxed text-sea-900 sm:mt-6 sm:text-[1.05rem]">
-              In one line: Tanya helps you listen to that little whisper in your
+              In one line: Tanya's methodologies help you listen to that little whisper in your
               soul telling you that you were meant for something more...
               let&apos;s go get it!!
             </p>
