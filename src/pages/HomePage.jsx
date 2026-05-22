@@ -41,7 +41,7 @@ export default function HomePage() {
         >
           <div className="px-7 pb-8 pt-7 text-center sm:px-10 sm:pb-9 sm:pt-8">
             <h2 className="text-lg font-semibold tracking-tight text-sea-900 sm:text-xl">
-              Want to go deeper?
+              Want to go to the next level?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-5 sm:text-[1.05rem]">
               Interested in working with Tanya more personally? BecomingYOU is a
