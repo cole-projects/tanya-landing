@@ -81,7 +81,7 @@ export default function LearnMoreAccordion() {
               stand, with a thread of memory that grows the more you share.
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-6 sm:text-[1.05rem]">
-              Tanya helps you find clarity, make progress, and feel better doing
+              Inside the experience, you find clarity, make progress, and feel better doing
               it, so you can create forward movement and regain trust in
               yourself. Whether you&apos;re working through something hard,
               building on something good, or simply trying to move through life
