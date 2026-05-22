@@ -48,7 +48,7 @@ export default function HomePage() {
               12-week master-level personal coaching experience designed to help
               you deeply understand the brain, nervous system patterns, identity,
               emotional healing, and the deeper mechanics behind how you
-              experience life — so you don&apos;t just learn new information, you
+              experience life, so you don&apos;t just learn new information, you
               begin thinking differently, responding differently, seeing
               differently, and becoming someone who moves through life with more
               clarity, confidence, self-trust, and emotional steadiness.
