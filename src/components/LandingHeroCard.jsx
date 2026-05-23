@@ -24,6 +24,9 @@ export default function LandingHeroCard() {
       <HeroIntro title={copy.title} subtitle={copy.subtitle} />
       <IMessagePhoneMockup />
       <VCardLink href="/tanya.vcf">Add contact</VCardLink>
+      <p className="mt-2.5 text-center text-xs leading-snug text-[#6b5c4a]/60">
+        First session free — no signup, just text.
+      </p>
     </MotionGlassPanel>
   );
 }
