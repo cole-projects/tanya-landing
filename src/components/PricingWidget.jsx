@@ -71,7 +71,7 @@ export default function PricingWidget() {
                 </li>
               ))}
             </ul>
-            <div className="mt-5">
+            <div className="mt-5 flex flex-col items-center">
               <VCardLink className="mx-auto block w-fit">Add contact</VCardLink>
               <p className="mt-2.5 text-center text-xs leading-snug text-sea-700/60">
                 25 free messages to start — no signup, just text.
