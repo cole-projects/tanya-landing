@@ -30,7 +30,7 @@ export default function HomePage() {
         />
       </figure>
 
-      <section className="w-full min-w-0 max-w-2xl" aria-label="Inner Circle Coaching Program">
+      <section className="w-full min-w-0 max-w-2xl" aria-label="BecomingYOU program">
         <MotionGlassPanel
           as="div"
           className="overflow-hidden rounded-[1.35rem] p-0"
@@ -44,7 +44,7 @@ export default function HomePage() {
               Want to go to the next level?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-5 sm:text-[1.05rem]">
-              Interested in working with Tanya more personally? This is a
+              Interested in working with Tanya more personally? BecomingYOU is a
               16-week master-level personal coaching experience designed to help
               you deeply understand the brain, nervous system patterns, identity,
               emotional healing, and the deeper mechanics behind how you
