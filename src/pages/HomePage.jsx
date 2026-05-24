@@ -45,7 +45,7 @@ export default function HomePage() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-5 sm:text-[1.05rem]">
               Interested in working with Tanya more personally? BecomingYOU is a
-              16-week master-level personal coaching experience designed to help
+              16-week Inner Circle Coaching Program designed to help
               you deeply understand the brain, nervous system patterns, identity,
               emotional healing, and the deeper mechanics behind how you
               experience life, so you don&apos;t just learn new information, you
