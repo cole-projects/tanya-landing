@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import VCardLink from "./VCardLink.jsx";
 
-const SMS_START = "sms:+13177282783&body=hey%20tanya";
 
 const PLAN_FEATURES = [
   "24/7 access to Tanya's master-level coaching by text",
@@ -71,12 +71,12 @@ export default function PricingWidget() {
                 </li>
               ))}
             </ul>
-            <a
-              href={SMS_START}
-              className="mt-5 block rounded-full bg-sea-900 px-4 py-2 text-center text-xs font-semibold text-white transition-opacity hover:opacity-85"
-            >
-              Start free
-            </a>
+            <div className="mt-5">
+              <VCardLink className="mx-auto block w-fit">Add contact</VCardLink>
+              <p className="mt-2.5 text-center text-xs leading-snug text-sea-700/60">
+                25 free messages to start — no signup, just text.
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
