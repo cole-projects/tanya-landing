@@ -50,7 +50,7 @@ export default function HomePage() {
             <h2 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
               Want to go to the next level?
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/90 sm:mt-5 sm:text-[1.05rem]">
+            <p className="mx-auto mt-4 max-w-xl text-left text-base leading-relaxed text-white/90 sm:mt-5 sm:text-[1.05rem]">
               Interested in working with Tanya more personally? <span className="font-semibold text-white">BecomingYOU</span> is a{" "}
               <span className="underline decoration-white/60 underline-offset-2">16-week Inner Circle Coaching Program</span> designed to help
               you deeply understand the brain, nervous system patterns, identity,
@@ -60,7 +60,7 @@ export default function HomePage() {
               differently, and becoming someone who moves through life with more
               clarity, confidence, self-trust, and emotional steadiness.
             </p>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/90 sm:mt-5 sm:text-[1.05rem]">
+            <p className="mx-auto mt-4 max-w-xl text-left text-base leading-relaxed text-white/90 sm:mt-5 sm:text-[1.05rem]">
               Weekly teachings, tools, and group coaching calls included.
             </p>
             <a

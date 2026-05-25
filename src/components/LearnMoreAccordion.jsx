@@ -28,7 +28,7 @@ function ContentBlock({ id, title, children, isFirst = false }) {
       >
         {title}
       </h2>
-      <div className="px-7 pb-8 pt-1 text-center sm:px-10 sm:pb-9">{children}</div>
+      <div className="px-7 pb-8 pt-1 sm:px-10 sm:pb-9">{children}</div>
     </div>
   );
 }
@@ -64,10 +64,10 @@ export default function LearnMoreAccordion() {
         transition={{ duration: 0.65, ease: brandEase }}
       >
         <ContentBlock id="what-is-tanyatalk" title="What is TanyaTalk?" isFirst>
-          <div className="text-center">
+          <div>
             <p className="mx-auto max-w-xl text-base leading-relaxed text-sea-800/92 sm:text-[1.05rem]">
               TanyaTalk is a personal coaching experience built on the full
-              depth of <mark className="rounded px-0.5 text-sea-800/92" style={{ background: "rgba(254,240,138,0.55)" }}>Tanya&apos;s heart</mark> and <mark className="rounded px-0.5 text-sea-800/92" style={{ background: "rgba(254,240,138,0.55)" }}>master-level coaching expertise</mark>,
+              depth of Tanya&apos;s heart and master-level coaching expertise,
               available 24/7. If you want to live your life with more
               intention, TanyaTalk is for you.
             </p>
@@ -75,29 +75,30 @@ export default function LearnMoreAccordion() {
               When you&apos;re stuck, overwhelmed, or ready to move but unsure
               of the <span className="italic">how</span>, Tanya helps you name
               the next step, like turning on a flashlight when the path is hard
-              to read. No scheduling. No waiting. Just concierge-style support
-              through decision points, identity wobbles, and life transitions.
-              No diagnosis, just you being human in real life, from where you
+              to read.
+            </p>
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-6 sm:text-[1.05rem]">
+              No scheduling. No waiting. Just concierge-style support through
+              decision points, identity wobbles, and life transitions. No
+              diagnosis, just you being human in real life, from where you
               stand, with a thread of memory that grows the more you share.
             </p>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-6 sm:text-[1.05rem]">
               Inside the experience, you find clarity, make progress, and feel better doing
               it, so you can create forward movement and regain trust in
               yourself.{" "}
-              <mark className="rounded bg-yellow-200 px-0.5 text-sea-800/92" style={{ background: "rgba(254,240,138,0.55)" }}>
-                Whether you&apos;re working through something hard, building on
-                something good, or simply trying to move through life with more
-                intention, TanyaTalk is built to meet you there.
-              </mark>
+              Whether you&apos;re working through something hard, building on
+              something good, or simply trying to move through life with more
+              intention, TanyaTalk is built to meet you there.
             </p>
-            <p className="mx-auto mt-5 max-w-xl text-base font-semibold leading-relaxed text-sea-900 sm:mt-6 sm:text-[1.05rem]">
+            <p className="mx-auto mt-9 max-w-xl text-center text-base font-semibold leading-relaxed text-sea-900 sm:mt-10 sm:text-[1.05rem]">
               That&apos;s TanyaTalk, right in your pocket!
             </p>
           </div>
         </ContentBlock>
 
         <ContentBlock id="who-is-tanya" title="Who is Tanya?">
-          <div className="text-center">
+          <div>
             <img
               src="/tanya-who.png"
               alt={WHO_SECTION_PHOTO_ALT}
@@ -105,8 +106,8 @@ export default function LearnMoreAccordion() {
               decoding="async"
             />
             <p className="mx-auto max-w-xl text-base leading-relaxed text-sea-800/92 sm:text-[1.05rem]">
-              Tanya is a master level life coach whose <mark className="rounded px-0.5 text-sea-800/92" style={{ background: "rgba(254,240,138,0.55)" }}>work blends neuroscience,
-              nervous system awareness, mindset, and identity transformation</mark>.
+              Tanya is a master level life coach whose work blends neuroscience,
+              nervous system awareness, mindset, and identity transformation.
               Tanya doesn&apos;t just help you think differently about your circumstances, she helps you
               experience life through a completely different lens, allowing you
               to show up empowered in every area of your life.
