@@ -830,3 +830,16 @@
     animation: none;
   }
 }
+
+/* Embedded demo clip — no native iOS fullscreen chrome */
+.demo-video__player {
+  pointer-events: none;
+}
+
+.demo-video__player::-webkit-media-controls {
+  display: none !important;
+}
+
+.demo-video__player::-webkit-media-controls-enclosure {
+  display: none !important;
+}

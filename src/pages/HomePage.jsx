@@ -1,5 +1,6 @@
 import LandingShell from "../components/LandingShell.jsx";
 import LandingHeroCard from "../components/LandingHeroCard.jsx";
+import DemoVideo from "../components/DemoVideo.jsx";
 import LearnMoreAccordion from "../components/LearnMoreAccordion.jsx";
 import Wordmark from "../components/Wordmark.jsx";
 import { MotionGlassPanel } from "../components/GlassPanel.jsx";
@@ -17,6 +18,7 @@ export default function HomePage() {
         <Wordmark />
         <LandingHeroCard />
       </div>
+      <DemoVideo />
       <LearnMoreAccordion />
       <figure className="w-full min-w-0 max-w-2xl">
         <img
@@ -67,7 +69,7 @@ export default function HomePage() {
               href="sms:+15627149917"
               className="btn-shimmer mt-6 inline-block rounded-full border border-white/60 bg-white/10 px-7 py-3 text-sm font-semibold text-white shadow-md backdrop-blur-sm transition hover:bg-white/20 sm:mt-7 sm:text-base"
             >
-              Call or text to learn more
+              Call or text Tanya directly
             </a>
           </div>
         </MotionGlassPanel>
