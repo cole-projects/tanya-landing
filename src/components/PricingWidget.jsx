@@ -5,7 +5,7 @@ import VCardLink from "./VCardLink.jsx";
 
 const PLAN_FEATURES = [
   "24/7 access to Tanya's master-level coaching by text",
-  "250 messages every billing month, refills automatically",
+  <><mark className="rounded px-0.5" style={{ background: "rgba(254,240,138,0.55)" }}>250 messages every billing month, refills automatically</mark></>,
   "Personal follow-up texts a couple days after your sessions",
   "Add more messages ($5 for 60) if you run out",
   "Cancel anytime by texting \"cancel subscription\"",
@@ -50,8 +50,8 @@ export default function PricingWidget() {
             </p>
 
             <ul className="mt-4 space-y-2.5">
-              {PLAN_FEATURES.map((f) => (
-                <li key={f} className="flex items-start gap-2.5 text-xs leading-relaxed text-sea-800/90">
+              {PLAN_FEATURES.map((f, i) => (
+                <li key={i} className="flex items-start gap-2.5 text-xs leading-relaxed text-sea-800/90">
                   <svg
                     className="mt-0.5 h-3.5 w-3.5 shrink-0 text-sea-600"
                     viewBox="0 0 16 16"

@@ -773,6 +773,34 @@
   opacity: 0.35;
 }
 
+/* Reusable shimmer sweep — same animation as .add-contact-cta */
+.btn-shimmer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.btn-shimmer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(
+    125deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 38%,
+    rgba(255, 255, 255, 0.55) 49%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 240% 100%;
+  background-position: 180% 50%;
+  animation: add-contact-shine 4.2s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}
+
 /* Pre-app and in-app: hand-drawn spiral art (public/loading-spiral.png) */
 @keyframes initial-splash-spiral-rotate {
   to {
