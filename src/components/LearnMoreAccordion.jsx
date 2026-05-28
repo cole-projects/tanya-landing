@@ -122,7 +122,7 @@ export function WhatIsTanyaTalk() {
 
           {/* Pivot */}
           <p className="mx-auto mt-7 max-w-xl text-left text-base leading-relaxed text-sea-800/92 sm:mt-8 sm:text-[1.05rem]">
-            TanyaTalk is a personal coaching experience built on the full depth of Tanya&apos;s heart and master-level coaching expertise, available 24/7.
+            TanyaTalk is a personal coaching experience backed by a decade of master-level expertise and built on the full depth of Tanya&apos;s heart, available 24/7.
           </p>
 
           <div className="mt-7 sm:mt-8">
@@ -221,12 +221,12 @@ export function WhoIsTanya() {
           </div>
           <div className="mx-auto mt-5 grid max-w-xl grid-cols-2 gap-3 sm:mt-6">
             <div className="flex flex-col items-center justify-center gap-1 rounded-2xl bg-sea-100/70 px-4 py-5 text-center ring-1 ring-sea-200/60">
-              <span className="text-2xl font-bold tracking-tight text-sea-700 sm:text-3xl">2,000+</span>
-              <span className="text-xs font-medium leading-snug text-sea-800/75 sm:text-sm">coaching hours logged</span>
+              <span className="text-2xl font-bold tracking-tight text-sea-700 sm:text-3xl">~10 yrs</span>
+              <span className="text-xs font-medium leading-snug text-sea-800/75 sm:text-sm">years of experience</span>
             </div>
             <div className="flex flex-col items-center justify-center gap-1 rounded-2xl bg-sea-100/70 px-4 py-5 text-center ring-1 ring-sea-200/60">
-              <span className="text-2xl font-bold tracking-tight text-sea-700 sm:text-3xl">~10 yrs</span>
-              <span className="text-xs font-medium leading-snug text-sea-800/75 sm:text-sm">helping people transform</span>
+              <span className="text-2xl font-bold tracking-tight text-sea-700 sm:text-3xl">2,000+</span>
+              <span className="text-xs font-medium leading-snug text-sea-800/75 sm:text-sm">hours of coaching</span>
             </div>
           </div>
           <div className="mx-auto mt-5 max-w-xl rounded-2xl bg-sea-100/70 px-5 py-4 ring-1 ring-sea-200/60 sm:mt-6">
