@@ -62,7 +62,7 @@ export function WhatIsTanyaTalk({ onOpenTerms }) {
       <Panel>
         <h2
           id="what-is-tanyatalk-heading"
-          className="px-7 pb-3 pt-7 text-center text-lg font-semibold tracking-tight text-sea-900 sm:pt-8 sm:text-xl"
+          className="px-7 pb-3 pt-7 text-center text-xl font-semibold tracking-tight text-sea-900 sm:pt-8 sm:text-2xl"
         >
           What is TanyaTalk?
         </h2>
@@ -187,7 +187,7 @@ export function WhoIsTanya() {
       <Panel>
         <h2
           id="who-is-tanya-heading"
-          className="px-7 pb-2 pt-7 text-center text-lg font-semibold tracking-tight text-sea-900 sm:pt-8 sm:text-xl"
+          className="px-7 pb-2 pt-7 text-center text-xl font-semibold tracking-tight text-sea-900 sm:pt-8 sm:text-2xl"
         >
           Who is Tanya?
         </h2>
