@@ -1,7 +1,7 @@
 import LandingShell from "../components/LandingShell.jsx";
 import LandingHeroCard from "../components/LandingHeroCard.jsx";
 import DemoVideo from "../components/DemoVideo.jsx";
-import LearnMoreAccordion from "../components/LearnMoreAccordion.jsx";
+import { WhatIsTanyaTalk, WhoIsTanya } from "../components/LearnMoreAccordion.jsx";
 import Testimonials from "../components/Testimonials.jsx";
 import Wordmark from "../components/Wordmark.jsx";
 import { MotionGlassPanel } from "../components/GlassPanel.jsx";
@@ -19,8 +19,9 @@ export default function HomePage() {
         <Wordmark />
         <LandingHeroCard />
       </div>
+      <WhatIsTanyaTalk />
       <DemoVideo />
-      <LearnMoreAccordion />
+      <WhoIsTanya />
       <Testimonials />
       <figure className="w-full min-w-0 max-w-2xl">
         <img
