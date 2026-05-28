@@ -44,7 +44,7 @@ const BUBBLES = [
   { label: "Regain trust in yourself", size: "lg", id: 13 },
   { label: "Remembers your story", size: "lg", id: 4 },
   { label: "No diagnosis", size: "sm", id: 8 },
-  { label: "Names your next step", size: "md", id: 9 },
+  { label: "Guides your next step", size: "md", id: 9 },
   { label: "Professional support", size: "lg", id: 11 },
   { label: "Master-level coaching", size: "lg", id: 16 },
   { label: "Show up as you are", size: "lg", id: 18 },
@@ -137,24 +137,19 @@ export function WhatIsTanyaTalk({ onOpenTerms }) {
             }
           `}</style>
           <div className="mx-auto mt-5 flex max-w-xl flex-wrap justify-center gap-2 sm:mt-6">
-            {BUBBLES.map(({ label, size, id }) => {
-              const gradients = [
-                "linear-gradient(135deg, #fceff0 0%, #f5dfe3 100%)",
-                "linear-gradient(135deg, #fff8f9 0%, #fcecef 100%)",
-                "linear-gradient(135deg, #f5dfe3 0%, #e8c8cf 100%)",
-              ];
+            {BUBBLES.map(({ label, size }, index) => {
               const padding = size === "lg" ? "px-3 py-2 text-xs font-medium" : size === "sm" ? "px-2.5 py-1.5 text-xs font-medium" : "px-3 py-1.5 text-xs font-medium";
               return (
                 <span
                   key={label}
                   style={{
-                    animation: `bubble-wave 3s ease-in-out ${-(id * (3 / 20)).toFixed(2)}s infinite`,
+                    animation: `bubble-wave 3s ease-in-out ${-(index * 0.3).toFixed(2)}s infinite`,
                     display: "inline-block",
                   }}
                 >
                   <motion.span
-                    className={`rounded-full text-sea-700 ring-1 ring-sea-200 shadow-sm ${padding}`}
-                    style={{ background: gradients[id % gradients.length], cursor: "grab", touchAction: "none", display: "inline-block" }}
+                    className={`rounded-full bg-sea-100 text-sea-800 ring-1 ring-sea-200/80 shadow-sm ${padding}`}
+                    style={{ cursor: "grab", touchAction: "none", display: "inline-block" }}
                     drag
                     dragElastic={0.15}
                     dragSnapToOrigin
