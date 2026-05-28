@@ -1,3 +1,9 @@
+/** iMessage deep link — shared so TermsSheet and HomePage stay in sync */
+export const SMS_LINK = "sms:+13177282783&body=hey%20tanya";
+
+/** localStorage key set when user agrees to terms — skip sheet on repeat visits */
+export const TERMS_ACCEPTED_KEY = "tt_agreed";
+
 /** Shared on-brand strings - keep landing + social previews aligned */
 export const PROFILE_PHOTO_ALT =
   "Tanya on the beach at sunset, arms open toward the ocean: calm, welcoming, and aligned with the TanyaTalk Caribbean coastal brand.";

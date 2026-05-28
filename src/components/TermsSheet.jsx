@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-
-const SMS_LINK = "sms:+13177282783&body=hey%20tanya";
+import { SMS_LINK, TERMS_ACCEPTED_KEY } from "../content/brand.js";
 
 const PARAGRAPHS = [
   "Hi, I'm Tanya. I've spent years helping people work through what's on their mind, and I'm here for you too. Everything here is built with my heart, so you always have someone to come to whenever you need it, 24/7.",
@@ -79,7 +78,7 @@ export default function TermsSheet({ isOpen, onClose }) {
 
               <a
                 href={SMS_LINK}
-                onClick={onClose}
+                onClick={() => { localStorage.setItem(TERMS_ACCEPTED_KEY, "1"); onClose(); }}
                 className="btn-shimmer add-contact-cta block w-full rounded-[14px] py-[14px] text-center text-[17px]"
               >
                 <span className="add-contact-cta__label font-semibold">

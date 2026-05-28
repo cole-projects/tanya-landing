@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SMS_LINK, TERMS_ACCEPTED_KEY } from "../content/brand.js";
 import LandingShell from "../components/LandingShell.jsx";
 import LandingHeroCard from "../components/LandingHeroCard.jsx";
 import { WhatIsTanyaTalk, WhoIsTanya } from "../components/LearnMoreAccordion.jsx";
@@ -12,7 +13,13 @@ import { BEACH_FOOTER_IMAGE_ALT } from "../content/brand.js";
 
 export default function HomePage() {
   const [showTerms, setShowTerms] = useState(false);
-  const openTerms = () => setShowTerms(true);
+  const openTerms = () => {
+    if (localStorage.getItem(TERMS_ACCEPTED_KEY)) {
+      window.location.href = SMS_LINK;
+    } else {
+      setShowTerms(true);
+    }
+  };
   const closeTerms = () => setShowTerms(false);
 
   return (
