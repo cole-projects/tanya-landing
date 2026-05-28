@@ -105,30 +105,66 @@ export default function LearnMoreAccordion() {
               className="mx-auto mb-6 aspect-[3/4] w-full max-w-[190px] rounded-2xl object-cover object-[center_20%] shadow-md ring-1 ring-sea-900/10 sm:mb-7"
               decoding="async"
             />
+
+            {/* One-line intro */}
             <p className="mx-auto max-w-xl text-base leading-relaxed text-sea-800/92 sm:text-[1.05rem]">
-              Tanya is a master level life coach whose work blends neuroscience,
-              nervous system awareness, mindset, and identity transformation.
-              Tanya doesn&apos;t just help you think differently about your circumstances, she helps you
-              experience life through a completely different lens, allowing you
-              to show up empowered in every area of your life.
+              Tanya is a master level life coach who helps you experience life
+              through a completely different lens, so you show up empowered in
+              every area of your life. When the life you want and the identity
+              you hold don&apos;t fully match yet, Tanya helps you close that gap.
             </p>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-6 sm:text-[1.05rem]">
-              <span className="font-semibold text-sea-900">Her Core Belief:</span>{" "}
-              Your alignment begins the moment you stop outsourcing your peace,
-              worth, and happiness to the outside world.
-            </p>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-sea-800/92 sm:mt-6 sm:text-[1.05rem]">
-              When the life you want and the identity you hold don&apos;t fully
-              match yet, Tanya helps you close that gap. What makes her distinct
-              is how she does it. She coaches from beside you, not above you,
-              holding space for how hard something feels while helping you
-              reconnect to the version of yourself that already knows the way
-              forward.
-            </p>
-            <p className="mx-auto mt-5 max-w-xl text-base font-semibold leading-relaxed text-sea-900 sm:mt-6 sm:text-[1.05rem]">
-              In one line: Tanya's methodologies help you listen to that little whisper in your
-              soul telling you that you were meant for something more...
-              let&apos;s go get it!!
+
+            {/* Expertise pills */}
+            <div className="mx-auto mt-5 flex max-w-xl flex-wrap justify-center gap-2 sm:mt-6">
+              {["Neuroscience", "Identity Transformation", "Spiritual Growth", "Perspective Shifts", "Emotional Regulation"].map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-sea-100 px-4 py-1.5 text-sm font-medium text-sea-800 ring-1 ring-sea-200/80"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <div className="mx-auto mt-5 grid max-w-xl grid-cols-2 gap-3 sm:mt-6">
+              <div className="flex flex-col items-center justify-center gap-1 rounded-2xl bg-sea-100/70 px-4 py-5 text-center ring-1 ring-sea-200/60">
+                <span className="text-2xl font-bold tracking-tight text-sea-700 sm:text-3xl">2,000+</span>
+                <span className="text-xs font-medium leading-snug text-sea-800/75 sm:text-sm">coaching hours logged</span>
+              </div>
+              <div className="flex flex-col items-center justify-center gap-1 rounded-2xl bg-sea-100/70 px-4 py-5 text-center ring-1 ring-sea-200/60">
+                <span className="text-2xl font-bold tracking-tight text-sea-700 sm:text-3xl">~10 yrs</span>
+                <span className="text-xs font-medium leading-snug text-sea-800/75 sm:text-sm">helping people transform</span>
+              </div>
+            </div>
+
+            {/* Core belief callout */}
+            <div className="mx-auto mt-5 max-w-xl rounded-2xl bg-sea-100/70 px-5 py-4 ring-1 ring-sea-200/60 sm:mt-6">
+              <p className="text-sm font-semibold uppercase tracking-widest text-sea-600 sm:text-xs">
+                Her Core Belief
+              </p>
+              <p className="mt-1.5 text-base leading-relaxed text-sea-900 sm:text-[1.05rem]">
+                Your alignment begins the moment you stop outsourcing your peace,
+                worth, and happiness to the outside world.
+              </p>
+            </div>
+
+            {/* How she coaches pills */}
+            <div className="mx-auto mt-5 flex max-w-xl flex-wrap justify-center gap-2 sm:mt-6">
+              {["Coaches beside you, not above you", "Holds space while moving you forward"].map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-sea-200/60 px-4 py-1.5 text-sm font-medium text-sea-800 ring-1 ring-sea-200/80"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Closing line */}
+            <p className="mx-auto mt-6 max-w-xl text-center text-base font-semibold leading-relaxed text-sea-900 sm:mt-7 sm:text-[1.05rem]">
+              Tanya&apos;s methodologies help you listen to that little whisper in your
+              soul telling you that you were meant for something more&hellip; let&apos;s go get it!!
             </p>
           </div>
         </ContentBlock>

@@ -2,6 +2,7 @@ import LandingShell from "../components/LandingShell.jsx";
 import LandingHeroCard from "../components/LandingHeroCard.jsx";
 import DemoVideo from "../components/DemoVideo.jsx";
 import LearnMoreAccordion from "../components/LearnMoreAccordion.jsx";
+import Testimonials from "../components/Testimonials.jsx";
 import Wordmark from "../components/Wordmark.jsx";
 import { MotionGlassPanel } from "../components/GlassPanel.jsx";
 import Sparkles from "../components/Sparkles.jsx";
@@ -20,6 +21,7 @@ export default function HomePage() {
       </div>
       <DemoVideo />
       <LearnMoreAccordion />
+      <Testimonials />
       <figure className="w-full min-w-0 max-w-2xl">
         <img
           src="/tanya-beach-footer.png"
