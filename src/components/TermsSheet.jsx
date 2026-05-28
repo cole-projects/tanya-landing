@@ -14,57 +14,86 @@ export default function TermsSheet({ isOpen, onClose }) {
     <AnimatePresence>
       {isOpen && (
         <>
+          {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
           />
+
+          {/* Sheet */}
           <motion.div
-            className="fixed bottom-0 left-0 right-0 z-50 mx-auto max-w-2xl rounded-t-[1.75rem] px-6 pb-10 pt-4 shadow-2xl"
-            style={{ background: "#faf8f6" }}
+            className="fixed bottom-0 left-0 right-0 z-50 mx-auto max-w-sm overflow-hidden rounded-t-[20px] bg-white shadow-2xl"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 32, stiffness: 320 }}
           >
-            <div className="mx-auto mb-5 h-1 w-10 rounded-full bg-sea-200" />
+            {/* Drag handle */}
+            <div className="flex justify-center pt-3 pb-1">
+              <div className="h-[5px] w-[36px] rounded-full bg-[#d1d1d6]" />
+            </div>
 
-            <div className="mb-1 flex items-center justify-between">
-              <h2 className="text-base font-semibold tracking-tight text-sea-900">
-                Before you start
-              </h2>
+            {/* Header — icon + name, Apple Pay style */}
+            <div className="flex flex-col items-center px-6 pb-4 pt-3">
+              <img
+                src="/icon-192.png"
+                alt="TanyaTalk"
+                className="mb-3 h-[60px] w-[60px] rounded-[14px] shadow-sm"
+              />
+              <p className="text-[17px] font-semibold leading-tight tracking-tight text-[#1c1c1e]">
+                TanyaTalk
+              </p>
+              <p className="mt-0.5 text-[13px] text-[#8e8e93]">
+                tanyatalk.ai
+              </p>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-[#e5e5ea]" />
+
+            {/* Scrollable body */}
+            <div className="max-h-[38vh] overflow-y-auto overscroll-contain px-6 py-4">
+              <div className="space-y-3.5">
+                {PARAGRAPHS.map((para, i) => (
+                  <p key={i} className="text-[14px] leading-relaxed text-[#3a3a3c]">
+                    {para}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-[#e5e5ea]" />
+
+            {/* Footer */}
+            <div className="px-6 pb-8 pt-4">
+              <p className="mb-1 text-center text-[12px] leading-snug text-[#8e8e93]">
+                Your first 25 messages are free, no credit card needed.
+              </p>
+              <p className="mb-4 text-center text-[12px] leading-snug text-[#8e8e93]">
+                You will not be charged by pressing Agree and Continue.
+              </p>
+
+              <a
+                href={SMS_LINK}
+                onClick={onClose}
+                className="btn-shimmer add-contact-cta block w-full rounded-[14px] py-[14px] text-center text-[17px]"
+              >
+                <span className="add-contact-cta__label font-semibold">
+                  Agree and Continue
+                </span>
+              </a>
+
               <button
                 onClick={onClose}
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-sea-100 text-sm text-sea-600 transition hover:bg-sea-200"
-                aria-label="Close"
+                className="mt-3 w-full text-center text-[16px] font-medium text-[#8e8e93] active:opacity-60"
               >
-                ✕
+                Cancel
               </button>
             </div>
-
-            <div className="mb-6 max-h-[52vh] space-y-4 overflow-y-auto pr-1 pt-3">
-              {PARAGRAPHS.map((para, i) => (
-                <p key={i} className="text-sm leading-relaxed text-sea-800/80">
-                  {para}
-                </p>
-              ))}
-            </div>
-
-            <p className="mb-1.5 text-center text-xs text-sea-700/60">
-              Your first 25 messages are free — no credit card needed.
-            </p>
-            <p className="mb-3 text-center text-xs text-sea-700/60">
-              You will not be charged by pressing Agree and Continue.
-            </p>
-            <a
-              href={SMS_LINK}
-              onClick={onClose}
-              className="btn-shimmer block w-full rounded-full py-3.5 text-center text-sm font-semibold shadow-md"
-            >
-              <span className="add-contact-cta__label">Agree and Continue</span>
-            </a>
           </motion.div>
         </>
       )}

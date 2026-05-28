@@ -139,9 +139,9 @@ export function WhatIsTanyaTalk({ onOpenTerms }) {
           <div className="mx-auto mt-5 flex max-w-xl flex-wrap justify-center gap-2 sm:mt-6">
             {BUBBLES.map(({ label, size, id }) => {
               const gradients = [
-                "linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%)",
-                "linear-gradient(135deg, #f5f5f5 0%, #ebebeb 100%)",
-                "linear-gradient(135deg, #fafafa 0%, #efefef 100%)",
+                "linear-gradient(135deg, #fceff0 0%, #f5dfe3 100%)",
+                "linear-gradient(135deg, #fff8f9 0%, #fcecef 100%)",
+                "linear-gradient(135deg, #f5dfe3 0%, #e8c8cf 100%)",
               ];
               const padding = size === "lg" ? "px-3 py-2 text-xs font-medium" : size === "sm" ? "px-2.5 py-1.5 text-xs font-medium" : "px-3 py-1.5 text-xs font-medium";
               return (
@@ -153,7 +153,7 @@ export function WhatIsTanyaTalk({ onOpenTerms }) {
                   }}
                 >
                   <motion.span
-                    className={`rounded-full text-gray-500 ring-1 ring-gray-200 shadow-sm ${padding}`}
+                    className={`rounded-full text-sea-700 ring-1 ring-sea-200 shadow-sm ${padding}`}
                     style={{ background: gradients[id % gradients.length], cursor: "grab", touchAction: "none", display: "inline-block" }}
                     drag
                     dragElastic={0.15}
