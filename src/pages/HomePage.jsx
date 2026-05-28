@@ -1,6 +1,5 @@
 import LandingShell from "../components/LandingShell.jsx";
 import LandingHeroCard from "../components/LandingHeroCard.jsx";
-import DemoVideo from "../components/DemoVideo.jsx";
 import { WhatIsTanyaTalk, WhoIsTanya } from "../components/LearnMoreAccordion.jsx";
 import Testimonials from "../components/Testimonials.jsx";
 import Wordmark from "../components/Wordmark.jsx";
@@ -20,7 +19,6 @@ export default function HomePage() {
         <LandingHeroCard />
       </div>
       <WhatIsTanyaTalk />
-      <DemoVideo />
       <WhoIsTanya />
       <Testimonials />
       <figure className="w-full min-w-0 max-w-2xl">

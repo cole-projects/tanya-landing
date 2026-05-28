@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { MotionGlassPanel } from "./GlassPanel.jsx";
 import VCardLink from "./VCardLink.jsx";
+import DemoVideo from "./DemoVideo.jsx";
 import { brandEase, rise } from "../lib/motion.js";
 import { WHO_SECTION_PHOTO_ALT } from "../content/brand.js";
 
@@ -123,6 +124,10 @@ export function WhatIsTanyaTalk() {
           <p className="mx-auto mt-7 max-w-xl text-left text-base leading-relaxed text-sea-800/92 sm:mt-8 sm:text-[1.05rem]">
             TanyaTalk is a personal coaching experience built on the full depth of Tanya&apos;s heart and master-level coaching expertise, available 24/7.
           </p>
+
+          <div className="mt-7 sm:mt-8">
+            <DemoVideo />
+          </div>
 
           {/* Bubble map */}
           <style>{`
