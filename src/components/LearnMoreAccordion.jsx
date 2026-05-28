@@ -51,7 +51,7 @@ const BUBBLES = [
   { label: "Safe space to be honest", size: "md", id: 19 },
 ];
 
-export function WhatIsTanyaTalk() {
+export function WhatIsTanyaTalk({ onOpenTerms }) {
   useHashScroll();
   return (
     <section
@@ -122,7 +122,7 @@ export function WhatIsTanyaTalk() {
 
           {/* Pivot */}
           <p className="mx-auto mt-7 max-w-xl text-left text-base leading-relaxed text-sea-800/92 sm:mt-8 sm:text-[1.05rem]">
-            TanyaTalk is a personal coaching experience backed by a decade of master-level expertise and built on the full depth of Tanya&apos;s heart, available 24/7.
+            TanyaTalk is a personal coaching experience backed by a decade of master-level expertise from Tanya Wannemacher, and built on the full depth of her heart, available 24/7.
           </p>
 
           <div className="mt-7 sm:mt-8">
@@ -139,9 +139,9 @@ export function WhatIsTanyaTalk() {
           <div className="mx-auto mt-5 flex max-w-xl flex-wrap justify-center gap-2 sm:mt-6">
             {BUBBLES.map(({ label, size, id }) => {
               const gradients = [
-                "linear-gradient(135deg, #fffaf8 0%, #fceff0 100%)",
-                "linear-gradient(135deg, #faf6f0 0%, #f5dfe3 100%)",
-                "linear-gradient(135deg, #fff8f9 0%, #f9d6df 100%)",
+                "linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%)",
+                "linear-gradient(135deg, #f5f5f5 0%, #ebebeb 100%)",
+                "linear-gradient(135deg, #fafafa 0%, #efefef 100%)",
               ];
               const padding = size === "lg" ? "px-3 py-2 text-xs font-medium" : size === "sm" ? "px-2.5 py-1.5 text-xs font-medium" : "px-3 py-1.5 text-xs font-medium";
               return (
@@ -153,7 +153,7 @@ export function WhatIsTanyaTalk() {
                   }}
                 >
                   <motion.span
-                    className={`rounded-full text-sea-800 ring-1 ring-sea-200/80 shadow-sm ${padding}`}
+                    className={`rounded-full text-gray-500 ring-1 ring-gray-200 shadow-sm ${padding}`}
                     style={{ background: gradients[id % gradients.length], cursor: "grab", touchAction: "none", display: "inline-block" }}
                     drag
                     dragElastic={0.15}
@@ -174,7 +174,7 @@ export function WhatIsTanyaTalk() {
             That&apos;s TanyaTalk, right in your pocket!
           </p>
           <div className="flex justify-center mt-8 sm:mt-9">
-            <VCardLink className="">Start on iMessage</VCardLink>
+            <VCardLink className="" onClick={onOpenTerms}>Start on iMessage</VCardLink>
           </div>
         </div>
       </Panel>
@@ -192,22 +192,45 @@ export function WhoIsTanya() {
       <Panel>
         <h2
           id="who-is-tanya-heading"
-          className="px-7 pb-3 pt-7 text-center text-lg font-semibold tracking-tight text-sea-900 sm:pt-8 sm:text-xl"
+          className="px-7 pb-2 pt-7 text-center text-lg font-semibold tracking-tight text-sea-900 sm:pt-8 sm:text-xl"
         >
           Who is Tanya?
         </h2>
-        <div className="px-7 pb-8 pt-1 sm:px-10 sm:pb-9">
-          <img
-            src="/tanya-who.png"
-            alt={WHO_SECTION_PHOTO_ALT}
-            className="mx-auto mb-6 aspect-[3/4] w-full max-w-[190px] rounded-2xl object-cover object-[center_20%] shadow-md ring-1 ring-sea-900/10 sm:mb-7"
-            decoding="async"
-          />
+        <div className="px-7 pb-8 pt-3 sm:px-10 sm:pb-9">
+          <div className="mb-6 sm:mb-7">
+            <img
+              src="/tanya-who.png"
+              alt={WHO_SECTION_PHOTO_ALT}
+              className="mx-auto aspect-[3/4] w-full max-w-[190px] rounded-2xl object-cover object-[center_20%] shadow-md ring-1 ring-sea-900/10"
+              decoding="async"
+            />
+            <div className="mx-auto mt-4 max-w-xs rounded-2xl bg-sea-100/70 px-4 py-3 ring-1 ring-sea-200/60">
+              <p className="mb-2 text-center text-xs font-semibold uppercase tracking-widest text-sea-600">
+                Tanya&apos;s Professional Certifications
+              </p>
+              <div className="flex items-center justify-center gap-4">
+                <img
+                  src="/icf-badge.png"
+                  alt="ICF International Coaching Federation"
+                  className="h-24 w-auto"
+                  decoding="async"
+                />
+                <img
+                  src="/cert.webp"
+                  alt="ICF PCC Professional Certified Coach"
+                  className="h-24 w-auto"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
           <p className="mx-auto max-w-xl text-base leading-relaxed text-sea-800/92 sm:text-[1.05rem]">
-            Tanya is a master level life coach who helps you experience life
-            through a completely different lens, so you show up empowered in
-            every area of your life. When the life you want and the identity
-            you hold don&apos;t fully match yet, Tanya helps you close that gap.
+            Tanya Wannemacher began as an elementary school teacher before
+            pursuing an ICF accredited Professional Coaching Degree. Today, as
+            a master level coach, she helps you see the world through a
+            completely different lens, so you show up empowered in every area
+            of your life. When who you want to become and the identity you hold
+            don&apos;t fully match yet, Tanya helps you close that gap.
           </p>
           <div className="mx-auto mt-5 flex max-w-xl flex-wrap justify-center gap-2 sm:mt-6">
             {["Neuroscience", "Identity Transformation", "Spiritual Growth", "Perspective Shifts", "Emotional Regulation"].map((tag) => (

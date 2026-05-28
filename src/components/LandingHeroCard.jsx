@@ -10,7 +10,7 @@ const copy = {
   subtitle: "Think clearer, make progress, and feel better doing it",
 };
 
-export default function LandingHeroCard() {
+export default function LandingHeroCard({ onOpenTerms }) {
   const reduceMotion = useReducedMotion();
 
   return (
@@ -23,7 +23,7 @@ export default function LandingHeroCard() {
     >
       <HeroIntro title={copy.title} subtitle={copy.subtitle} />
       <IMessagePhoneMockup />
-      <VCardLink href="/tanya.vcf">Get Started</VCardLink>
+      <VCardLink onClick={onOpenTerms}>Start on iMessage</VCardLink>
       <p className="mt-2.5 text-center text-xs leading-snug text-[#6b5c4a]/60">
         25 free messages to start — no signup, just text.
       </p>
