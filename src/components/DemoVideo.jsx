@@ -9,19 +9,32 @@ export default function DemoVideo() {
     const video = videoRef.current;
     if (!video) return;
 
+    const tryPlay = () => video.play().catch(() => {});
+
+    // Attempt immediately — works on Chrome and desktop Safari
+    tryPlay();
+
+    // Re-attempt on first touch — iOS Safari requires a user gesture
+    const onTouch = () => { tryPlay(); document.removeEventListener("touchstart", onTouch); };
+    document.addEventListener("touchstart", onTouch, { passive: true });
+
+    // Lower threshold so it fires as soon as any part of the video scrolls into view
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          video.play().catch(() => {});
+          tryPlay();
         } else {
           video.pause();
         }
       },
-      { threshold: 0.45 },
+      { threshold: 0.1 },
     );
 
     observer.observe(video);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("touchstart", onTouch);
+    };
   }, []);
 
   return (
