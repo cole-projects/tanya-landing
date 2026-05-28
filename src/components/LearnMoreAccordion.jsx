@@ -143,7 +143,7 @@ export function WhatIsTanyaTalk() {
                 "linear-gradient(135deg, #faf6f0 0%, #f5dfe3 100%)",
                 "linear-gradient(135deg, #fff8f9 0%, #f9d6df 100%)",
               ];
-              const padding = size === "lg" ? "px-4 py-2.5 text-sm font-medium" : size === "sm" ? "px-3 py-1.5 text-sm font-medium" : "px-3.5 py-2 text-sm font-medium";
+              const padding = size === "lg" ? "px-3 py-2 text-xs font-medium" : size === "sm" ? "px-2.5 py-1.5 text-xs font-medium" : "px-3 py-1.5 text-xs font-medium";
               return (
                 <span
                   key={label}
