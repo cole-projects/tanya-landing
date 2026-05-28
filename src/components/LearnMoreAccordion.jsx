@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { MotionGlassPanel } from "./GlassPanel.jsx";
+import VCardLink from "./VCardLink.jsx";
 import { brandEase, rise } from "../lib/motion.js";
 import { WHO_SECTION_PHOTO_ALT } from "../content/brand.js";
 
@@ -39,21 +40,13 @@ function Panel({ children }) {
 const BUBBLES = [
   { label: "Available 24/7", size: "lg", id: 0 },
   { label: "No scheduling", size: "md", id: 1 },
-  { label: "No waiting", size: "md", id: 2 },
-  { label: "She follows up", size: "md", id: 3 },
-  { label: "Memory that grows with you", size: "lg", id: 4 },
-  { label: "Decision points", size: "md", id: 5 },
-  { label: "Life transitions", size: "md", id: 7 },
+  { label: "Regain trust in yourself", size: "lg", id: 13 },
+  { label: "Remembers your story", size: "lg", id: 4 },
   { label: "No diagnosis", size: "sm", id: 8 },
   { label: "Names your next step", size: "md", id: 9 },
-  { label: "Concierge-style support", size: "lg", id: 11 },
-  { label: "Forward movement", size: "md", id: 12 },
-  { label: "Regain trust in yourself", size: "lg", id: 13 },
-  { label: "Clarity", size: "sm", id: 14 },
-  { label: "Feel better", size: "sm", id: 15 },
+  { label: "Professional support", size: "lg", id: 11 },
   { label: "Master-level coaching", size: "lg", id: 16 },
-  { label: "Stuck or overwhelmed?", size: "md", id: 17 },
-  { label: "Just you being human", size: "lg", id: 18 },
+  { label: "Show up as you are", size: "lg", id: 18 },
   { label: "Safe space to be honest", size: "md", id: 19 },
 ];
 
@@ -73,12 +66,62 @@ export function WhatIsTanyaTalk() {
           What is TanyaTalk?
         </h2>
         <div className="px-7 pb-8 pt-1 sm:px-10 sm:pb-9">
+
           {/* Hook */}
-          <p className="mx-auto max-w-xl text-left text-base leading-relaxed text-sea-800/92 sm:text-[1.05rem]">
-            TanyaTalk is a personal coaching experience built on the full
-            depth of Tanya&apos;s heart and master-level coaching expertise,
-            available 24/7. If you want to live your life with more
-            intention, TanyaTalk is for you.
+          <div className="mx-auto mb-7 max-w-xl sm:mb-8">
+            <p className="text-2xl font-bold leading-tight tracking-tight text-sea-900 sm:text-3xl">
+              You&apos;re spiraling. It&apos;s 2am. Nobody to call.
+            </p>
+          <div className="mt-4 space-y-2">
+              <p className="text-lg leading-snug text-sea-800/70 sm:text-xl">Is this relationship worth saving?</p>
+              <p className="text-lg leading-snug text-sea-800/70 sm:text-xl">Am I even on the right path?</p>
+              <p className="text-lg leading-snug text-sea-800/70 sm:text-xl">Why does everyone else look fine?</p>
+            </div>
+          </div>
+
+          {/* Problem */}
+          <p className="mx-auto max-w-xl text-left text-base font-semibold text-sea-900 sm:text-[1.05rem]">
+            The support system is broken.
+          </p>
+          <div className="mx-auto mt-3 grid max-w-xl grid-cols-2 gap-3 sm:mt-4">
+            {[
+              { who: "Therapy", problem: "Has a waitlist" },
+              { who: "Friends", problem: "Give half advice" },
+              { who: "Google", problem: "Gives worse advice" },
+              { who: "Journaling", problem: "Doesn't talk back" },
+            ].map(({ who, problem }) => (
+              <div
+                key={who}
+                className="rounded-2xl bg-sea-100/70 px-4 py-4 ring-1 ring-sea-200/60"
+              >
+                <p className="text-sm font-semibold text-sea-800">{who}</p>
+                <p className="mt-0.5 text-sm leading-snug text-sea-700/75">{problem}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Nobody prepares you */}
+          <p className="mx-auto mt-7 max-w-xl text-left text-base font-semibold text-sea-900 sm:mt-8 sm:text-[1.05rem]">
+            Nobody prepares you for the real stuff:
+          </p>
+          <ul className="mx-auto mt-3 max-w-xl space-y-2 pl-1">
+            <li className="flex items-start gap-2 text-base leading-relaxed text-sea-800/90 sm:text-[1.05rem]">
+              <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sea-300" />
+              Figuring out what you actually want
+            </li>
+            <li className="flex items-start gap-2 text-base leading-relaxed text-sea-800/90 sm:text-[1.05rem]">
+              <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sea-300" />
+              Navigating job searches, relationships, and big decisions
+            </li>
+            <li className="flex items-start gap-2 text-base font-semibold leading-relaxed sm:text-[1.05rem]" style={{ color: "#0e9e97" }}>
+              <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full" style={{ background: "#0e9e97" }} />
+              Deciding who you&apos;re becoming
+            </li>
+          </ul>
+
+          {/* Pivot */}
+          <p className="mx-auto mt-7 max-w-xl text-left text-base leading-relaxed text-sea-800/92 sm:mt-8 sm:text-[1.05rem]">
+            TanyaTalk is a personal coaching experience built on the full depth of Tanya&apos;s heart and master-level coaching expertise, available 24/7.
           </p>
 
           {/* Bubble map */}
@@ -120,13 +163,14 @@ export function WhatIsTanyaTalk() {
           </div>
 
           <p className="mx-auto mt-8 max-w-xl text-left text-base leading-relaxed text-sea-800/92 sm:mt-9 sm:text-[1.05rem]">
-            Whether you&apos;re working through something hard, building on
-            something good, or simply trying to move through life with more
-            intention, TanyaTalk is built to meet you there.
+            Whether you&apos;re working through something hard, building on something good, or simply trying to move through life with more intention, TanyaTalk is built to meet you there.
           </p>
           <p className="mx-auto mt-8 max-w-xl text-center text-lg font-semibold leading-relaxed text-sea-900 sm:mt-10 sm:text-xl">
             That&apos;s TanyaTalk, right in your pocket!
           </p>
+          <div className="flex justify-center mt-8 sm:mt-9">
+            <VCardLink className="">Start on iMessage</VCardLink>
+          </div>
         </div>
       </Panel>
     </section>
