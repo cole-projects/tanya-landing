@@ -1,6 +1,7 @@
 import LandingShell from "../components/LandingShell.jsx";
 import LandingHeroCard from "../components/LandingHeroCard.jsx";
 import DemoVideo from "../components/DemoVideo.jsx";
+import VCardLink from "../components/VCardLink.jsx";
 import { WhatIsTanyaTalk, WhoIsTanya } from "../components/LearnMoreAccordion.jsx";
 import Testimonials from "../components/Testimonials.jsx";
 import Wordmark from "../components/Wordmark.jsx";
@@ -20,6 +21,7 @@ export default function HomePage() {
         <LandingHeroCard />
       </div>
       <WhatIsTanyaTalk />
+      <VCardLink>Add Contact</VCardLink>
       <DemoVideo />
       <WhoIsTanya />
       <Testimonials />

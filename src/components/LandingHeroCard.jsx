@@ -23,7 +23,7 @@ export default function LandingHeroCard() {
     >
       <HeroIntro title={copy.title} subtitle={copy.subtitle} />
       <IMessagePhoneMockup />
-      <VCardLink href="/tanya.vcf">Add contact</VCardLink>
+      <VCardLink href="/tanya.vcf">Get Started</VCardLink>
       <p className="mt-2.5 text-center text-xs leading-snug text-[#6b5c4a]/60">
         25 free messages to start — no signup, just text.
       </p>
