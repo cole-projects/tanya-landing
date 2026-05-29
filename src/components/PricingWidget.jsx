@@ -7,7 +7,7 @@ import { SMS_LINK, TERMS_ACCEPTED_KEY } from "../content/brand.js";
 
 const PLAN_FEATURES = [
   "250 messages every billing month, refills automatically",
-  "24/7 access to Tanya's master-level coaching by text",
+  "24/7 access to Tanya's professional-level coaching by text",
   "Personal follow-up texts a couple days after your sessions",
   "Add more messages ($5 for 60) if you run out",
   "Cancel anytime by texting \"cancel subscription\"",

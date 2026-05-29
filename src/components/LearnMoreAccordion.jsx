@@ -82,7 +82,7 @@ export function WhatIsTanyaTalk({ onOpenTerms }) {
 
           {/* Problem */}
           <p className="mx-auto max-w-xl text-left text-base font-semibold text-sea-900 sm:text-[1.05rem]">
-            Here are your support system options:
+            These options exist, but there are gaps.
           </p>
           <div className="mx-auto mt-3 grid max-w-xl grid-cols-2 gap-3 sm:mt-4">
             {[
@@ -125,7 +125,7 @@ export function WhatIsTanyaTalk({ onOpenTerms }) {
 
           {/* Pivot */}
           <p className="mx-auto mt-7 max-w-xl text-left text-base leading-relaxed text-sea-800/92 sm:mt-8 sm:text-[1.05rem]">
-            TanyaTalk is a personal coaching experience backed by a decade of master-level expertise from Tanya Wannemacher, and built on the full depth of her heart, available 24/7.
+            TanyaTalk is a personal coaching experience backed by nearly a decade of professional-level expertise from Tanya Wannemacher, built on the full depth of her heart, available 24/7 right in your iMessage.
           </p>
 
           <div className="mt-7 sm:mt-8">
@@ -225,7 +225,7 @@ export function WhoIsTanya() {
           <p className="mx-auto max-w-xl text-base leading-relaxed text-sea-800/92 sm:text-[1.05rem]">
             Tanya Wannemacher began as an elementary school teacher before
             pursuing an ICF accredited Professional Coaching Degree. Today, as
-            a master level coach, she helps you see the world through a
+            a professional level coach, she helps you see the world through a
             completely different lens, so you show up empowered in every area
             of your life. When who you want to become and the identity you hold
             don&apos;t fully match yet, Tanya helps you close that gap.
