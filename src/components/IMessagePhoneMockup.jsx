@@ -207,6 +207,9 @@ export default function IMessagePhoneMockup() {
                             durationLabel={m.durationLabel ?? "0:21"}
                             audioSrc={m.audioSrc}
                           />
+                          <p style={{ fontSize: "9px", color: "#007aff", marginTop: "3px", marginLeft: "2px", fontWeight: 500, opacity: 0.85 }}>
+                            👆 click me
+                          </p>
                           {m.transcript ? (
                             <p className="iphone-mockup__bubble iphone-mockup__bubble--recv iphone-mockup__bubble--transcript">
                               {m.transcript}
