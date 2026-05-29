@@ -1,13 +1,27 @@
+import { useState } from "react";
 import LandingShell from "../components/LandingShell.jsx";
 import LandingHeroCard from "../components/LandingHeroCard.jsx";
 import LearnMoreAccordion from "../components/LearnMoreAccordion.jsx";
+import TermsSheet from "../components/TermsSheet.jsx";
 import Wordmark from "../components/Wordmark.jsx";
 import { MotionGlassPanel } from "../components/GlassPanel.jsx";
 import Sparkles from "../components/Sparkles.jsx";
 import { brandEase, rise } from "../lib/motion.js";
-import { BEACH_FOOTER_IMAGE_ALT } from "../content/brand.js";
+import { BEACH_FOOTER_IMAGE_ALT, SMS_LINK, TERMS_ACCEPTED_KEY } from "../content/brand.js";
 
 export default function HomePage() {
+  const [showTerms, setShowTerms] = useState(false);
+
+  const openTerms = () => {
+    if (localStorage.getItem(TERMS_ACCEPTED_KEY)) {
+      window.location.href = SMS_LINK;
+    } else {
+      setShowTerms(true);
+    }
+  };
+
+  const closeTerms = () => setShowTerms(false);
+
   return (
     <LandingShell loose>
       <div
@@ -15,9 +29,9 @@ export default function HomePage() {
         className="flex w-full min-w-0 max-w-2xl flex-col items-center scroll-mt-6 sm:scroll-mt-8"
       >
         <Wordmark />
-        <LandingHeroCard />
+        <LandingHeroCard onOpenTerms={openTerms} />
       </div>
-      <LearnMoreAccordion />
+      <LearnMoreAccordion onOpenTerms={openTerms} />
       <figure className="w-full min-w-0 max-w-2xl">
         <img
           src="/tanya-beach-footer.png"
@@ -72,6 +86,8 @@ export default function HomePage() {
           </div>
         </MotionGlassPanel>
       </section>
+
+      <TermsSheet isOpen={showTerms} onClose={closeTerms} />
     </LandingShell>
   );
 }

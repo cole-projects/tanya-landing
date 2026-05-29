@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import VCardLink from "./VCardLink.jsx";
+import TermsSheet from "./TermsSheet.jsx";
+import { SMS_LINK, TERMS_ACCEPTED_KEY } from "../content/brand.js";
 
 
 const PLAN_FEATURES = [
@@ -13,6 +15,7 @@ const PLAN_FEATURES = [
 
 export default function PricingWidget() {
   const [open, setOpen] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
   const panelRef = useRef(null);
 
   useEffect(() => {
@@ -26,60 +29,72 @@ export default function PricingWidget() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, [open]);
 
+  const openTerms = () => {
+    if (localStorage.getItem(TERMS_ACCEPTED_KEY)) {
+      window.location.href = SMS_LINK;
+    } else {
+      setShowTerms(true);
+    }
+  };
+
   return (
-    <div ref={panelRef} className="fixed right-4 top-2 z-50">
-      <button
-        onClick={() => setOpen((o) => !o)}
-        className="rounded-full bg-white/70 px-3 py-1.5 text-xs font-semibold text-sea-700 ring-1 ring-sea-200/70 transition-opacity hover:opacity-80"
-      >
-        Pricing
-      </button>
+    <>
+      <div ref={panelRef} className="fixed right-4 top-2 z-50">
+        <button
+          onClick={() => setOpen((o) => !o)}
+          className="rounded-full bg-white/70 px-3 py-1.5 text-xs font-semibold text-sea-700 ring-1 ring-sea-200/70 transition-opacity hover:opacity-80"
+        >
+          Pricing
+        </button>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -6, scale: 0.97 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -6, scale: 0.97 }}
-            transition={{ duration: 0.18 }}
-            className="glass-panel absolute right-0 top-10 z-50 w-72 rounded-2xl p-5 shadow-xl"
-          >
-            <p className="text-2xl font-bold tracking-tight text-sea-900">
-              $21
-              <span className="ml-1 text-sm font-normal text-sea-700">/ month</span>
-            </p>
-
-            <ul className="mt-4 space-y-2.5">
-              {PLAN_FEATURES.map((f) => (
-                <li key={f} className="flex items-start gap-2.5 text-xs leading-relaxed text-sea-800/90">
-                  <svg
-                    className="mt-0.5 h-3.5 w-3.5 shrink-0 text-sea-600"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    <circle cx="8" cy="8" r="7.5" stroke="currentColor" strokeOpacity="0.35" />
-                    <path
-                      d="M5 8l2 2 4-4"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-5 flex flex-col items-center">
-              <VCardLink className="mx-auto block w-fit">Add contact</VCardLink>
-              <p className="mt-2.5 text-center text-xs leading-snug text-sea-700/60">
-                25 free messages to start — no signup, just text.
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, y: -6, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -6, scale: 0.97 }}
+              transition={{ duration: 0.18 }}
+              className="glass-panel absolute right-0 top-10 z-50 w-72 rounded-2xl p-5 shadow-xl"
+            >
+              <p className="text-2xl font-bold tracking-tight text-sea-900">
+                $21
+                <span className="ml-1 text-sm font-normal text-sea-700">/ month</span>
               </p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+
+              <ul className="mt-4 space-y-2.5">
+                {PLAN_FEATURES.map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-xs leading-relaxed text-sea-800/90">
+                    <svg
+                      className="mt-0.5 h-3.5 w-3.5 shrink-0 text-sea-600"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <circle cx="8" cy="8" r="7.5" stroke="currentColor" strokeOpacity="0.35" />
+                      <path
+                        d="M5 8l2 2 4-4"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-5 flex flex-col items-center">
+                <VCardLink className="mx-auto block w-fit" onClick={openTerms}>Add contact</VCardLink>
+                <p className="mt-2.5 text-center text-xs leading-snug text-sea-700/60">
+                  25 free messages to start — no signup, just text.
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      <TermsSheet isOpen={showTerms} onClose={() => setShowTerms(false)} />
+    </>
   );
 }
