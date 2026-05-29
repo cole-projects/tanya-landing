@@ -82,21 +82,24 @@ export function WhatIsTanyaTalk({ onOpenTerms }) {
 
           {/* Problem */}
           <p className="mx-auto max-w-xl text-left text-base font-semibold text-sea-900 sm:text-[1.05rem]">
-            The support system is broken.
+            These options exist, but there are gaps.
           </p>
           <div className="mx-auto mt-3 grid max-w-xl grid-cols-2 gap-3 sm:mt-4">
             {[
-              { who: "Therapy", problem: "Has a waitlist" },
-              { who: "Friends", problem: "Give half advice" },
-              { who: "Google", problem: "Gives worse advice" },
-              { who: "Journaling", problem: "Doesn't talk back" },
-            ].map(({ who, problem }) => (
+              { who: "Therapy", strength: "Deep emotional processing", problem: "Has a waitlist. No in-between session guidance." },
+              { who: "Friends & Family", strength: "Love and connection", problem: "Biased and based on their own fears." },
+              { who: "Google & Chatbots", strength: "Endless information", problem: "Broad purpose. Generic memory. Not specialized in transformation." },
+              { who: "Journaling", strength: "Self-reflection and awareness", problem: "Doesn't respond." },
+              { who: "Coaching", strength: "Powerful transformation", problem: "Not covered by insurance." },
+              { who: "Social Media", strength: "Inspiration", problem: "Dopamine hit without direction." },
+            ].map(({ who, strength, problem }) => (
               <div
                 key={who}
                 className="rounded-2xl bg-sea-100/70 px-4 py-4 ring-1 ring-sea-200/60"
               >
                 <p className="text-sm font-semibold text-sea-800">{who}</p>
-                <p className="mt-0.5 text-sm leading-snug text-sea-700/75">{problem}</p>
+                <p className="mt-0.5 text-xs italic leading-snug text-sea-700/55">{strength}</p>
+                <p className="mt-1.5 text-sm leading-snug text-sea-700/75">{problem}</p>
               </div>
             ))}
           </div>
@@ -108,11 +111,11 @@ export function WhatIsTanyaTalk({ onOpenTerms }) {
           <ul className="mx-auto mt-3 max-w-xl space-y-2 pl-1">
             <li className="flex items-start gap-2 text-base leading-relaxed text-sea-800/90 sm:text-[1.05rem]">
               <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sea-300" />
-              Figuring out what you actually want
+              Figuring out <em>how</em> to get what you want
             </li>
             <li className="flex items-start gap-2 text-base leading-relaxed text-sea-800/90 sm:text-[1.05rem]">
               <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sea-300" />
-              Navigating job searches, relationships, and big decisions
+              Trusting your decisions
             </li>
             <li className="flex items-start gap-2 text-base font-semibold leading-relaxed sm:text-[1.05rem]" style={{ color: "#0e9e97" }}>
               <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full" style={{ background: "#0e9e97" }} />
@@ -122,7 +125,7 @@ export function WhatIsTanyaTalk({ onOpenTerms }) {
 
           {/* Pivot */}
           <p className="mx-auto mt-7 max-w-xl text-left text-base leading-relaxed text-sea-800/92 sm:mt-8 sm:text-[1.05rem]">
-            TanyaTalk is a personal coaching experience backed by a decade of master-level expertise from Tanya Wannemacher, and built on the full depth of her heart, available 24/7.
+            TanyaTalk is a personal coaching experience backed by nearly a decade of professional-level expertise from Tanya Wannemacher, built on the full depth of her heart, available 24/7 right in your iMessage.
           </p>
 
           <div className="mt-7 sm:mt-8">
