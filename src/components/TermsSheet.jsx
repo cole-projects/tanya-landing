@@ -78,7 +78,17 @@ export default function TermsSheet({ isOpen, onClose }) {
 
               <a
                 href={SMS_LINK}
-                onClick={() => { localStorage.setItem(TERMS_ACCEPTED_KEY, "1"); onClose(); }}
+                onClick={() => {
+                  localStorage.setItem(TERMS_ACCEPTED_KEY, "1");
+                  const eventId = crypto.randomUUID();
+                  window.fbq?.("trackCustom", "AgreeAndContinue", {}, { eventID: eventId });
+                  fetch("/api/track", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ event_id: eventId, event_name: "AgreeAndContinue" }),
+                  }).catch(() => {});
+                  onClose();
+                }}
                 className="btn-shimmer add-contact-cta block w-full rounded-[14px] py-[14px] text-center text-[17px]"
               >
                 <span className="add-contact-cta__label font-semibold">

@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     return;
   }
 
-  const { event_id } = req.body;
+  const { event_id, event_name = "StartIMessage" } = req.body;
   const ip = (req.headers["x-forwarded-for"] || "").split(",")[0].trim();
   const userAgent = req.headers["user-agent"] || "";
   const referer = req.headers["referer"] || "https://tanyatalk.co";
@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   const payload = {
     data: [
       {
-        event_name: "StartIMessage",
+        event_name,
         event_time: Math.floor(Date.now() / 1000),
         event_id,
         action_source: "website",
