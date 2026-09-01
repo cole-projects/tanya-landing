@@ -30,6 +30,14 @@ export default function PricingWidget() {
   }, [open]);
 
   const openTerms = () => {
+    const eventId = crypto.randomUUID();
+    window.fbq?.("trackCustom", "StartIMessage", {}, { eventID: eventId });
+    fetch("/api/track", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ event_id: eventId }),
+    }).catch(() => {});
+
     if (localStorage.getItem(TERMS_ACCEPTED_KEY)) {
       window.location.href = SMS_LINK;
     } else {
