@@ -8,7 +8,7 @@ const PARAGRAPHS = [
   "When you're ready, the more you share with me, the deeper we can go together. You don't have to have everything figured out, just start wherever you are.",
 ];
 
-export default function TermsSheet({ isOpen, onClose, onAgree }) {
+export default function TermsSheet({ isOpen, onClose }) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -78,12 +78,7 @@ export default function TermsSheet({ isOpen, onClose, onAgree }) {
 
               <a
                 href={SMS_LINK}
-                onClick={(e) => {
-                  e.preventDefault();
-                  localStorage.setItem(TERMS_ACCEPTED_KEY, "1");
-                  onAgree?.();
-                  setTimeout(() => { window.location.href = SMS_LINK; }, 300);
-                }}
+                onClick={() => { localStorage.setItem(TERMS_ACCEPTED_KEY, "1"); onClose(); }}
                 className="btn-shimmer add-contact-cta block w-full rounded-[14px] py-[14px] text-center text-[17px]"
               >
                 <span className="add-contact-cta__label font-semibold">

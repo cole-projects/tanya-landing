@@ -30,17 +30,6 @@ export default function HomePage() {
 
   const closeTerms = () => setShowTerms(false);
 
-  const handleAgree = () => {
-    const eventId = crypto.randomUUID();
-    window.fbq?.("trackCustom", "AgreeAndContinue", {}, { eventID: eventId });
-    fetch("/api/track", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ event_id: eventId, event_name: "AgreeAndContinue" }),
-    }).catch(() => {});
-    setShowTerms(false);
-  };
-
   return (
     <LandingShell loose>
       <div
@@ -106,7 +95,7 @@ export default function HomePage() {
         </MotionGlassPanel>
       </section>
 
-      <TermsSheet isOpen={showTerms} onClose={closeTerms} onAgree={handleAgree} />
+      <TermsSheet isOpen={showTerms} onClose={closeTerms} />
     </LandingShell>
   );
 }
