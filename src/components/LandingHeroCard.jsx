@@ -23,10 +23,6 @@ export default function LandingHeroCard({ onOpenTerms }) {
     >
       <HeroIntro title={copy.title} subtitle={copy.subtitle} />
       <IMessagePhoneMockup />
-      <VCardLink onClick={onOpenTerms}>Start on iMessage</VCardLink>
-      <p className="mt-2.5 text-center text-xs leading-snug text-[#6b5c4a]/60">
-        Test it free for 25 messages. No signup required, no credit card. Love it? $21/month to get started.
-      </p>
     </MotionGlassPanel>
   );
 }

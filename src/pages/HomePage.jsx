@@ -36,7 +36,20 @@ export default function HomePage() {
         id="top"
         className="flex w-full min-w-0 max-w-2xl flex-col items-center scroll-mt-6 sm:scroll-mt-8"
       >
-        <Wordmark />
+        <Wordmark onOpenTerms={openTerms} />
+        <section className="w-full min-w-0 max-w-xs mt-1 mb-6">
+          <p className="mb-3 text-center text-sm font-medium text-[#6b5c4a]/70">See it in action</p>
+          <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ aspectRatio: "9/16" }}>
+            <iframe
+              src="https://www.youtube.com/embed/7udtah5_W_g"
+              title="What is TanyaTalk?"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 h-full w-full"
+              style={{ border: "none" }}
+            />
+          </div>
+        </section>
         <LandingHeroCard onOpenTerms={openTerms} />
       </div>
       <LearnMoreAccordion onOpenTerms={openTerms} />
