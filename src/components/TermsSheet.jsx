@@ -8,7 +8,7 @@ const PARAGRAPHS = [
   "When you're ready, the more you share with me, the deeper we can go together. You don't have to have everything figured out, just start wherever you are.",
 ];
 
-export default function TermsSheet({ isOpen, onClose }) {
+export default function TermsSheet({ isOpen, onClose, onAgree }) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -81,14 +81,7 @@ export default function TermsSheet({ isOpen, onClose }) {
                 onClick={(e) => {
                   e.preventDefault();
                   localStorage.setItem(TERMS_ACCEPTED_KEY, "1");
-                  const eventId = crypto.randomUUID();
-                  window.fbq?.("trackCustom", "AgreeAndContinue", {}, { eventID: eventId });
-                  fetch("/api/track", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ event_id: eventId, event_name: "AgreeAndContinue" }),
-                  }).catch(() => {});
-                  onClose();
+                  onAgree?.();
                   setTimeout(() => { window.location.href = SMS_LINK; }, 300);
                 }}
                 className="btn-shimmer add-contact-cta block w-full rounded-[14px] py-[14px] text-center text-[17px]"
