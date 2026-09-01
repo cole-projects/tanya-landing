@@ -78,7 +78,8 @@ export default function TermsSheet({ isOpen, onClose }) {
 
               <a
                 href={SMS_LINK}
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   localStorage.setItem(TERMS_ACCEPTED_KEY, "1");
                   const eventId = crypto.randomUUID();
                   window.fbq?.("trackCustom", "AgreeAndContinue", {}, { eventID: eventId });
@@ -88,6 +89,7 @@ export default function TermsSheet({ isOpen, onClose }) {
                     body: JSON.stringify({ event_id: eventId, event_name: "AgreeAndContinue" }),
                   }).catch(() => {});
                   onClose();
+                  setTimeout(() => { window.location.href = SMS_LINK; }, 300);
                 }}
                 className="btn-shimmer add-contact-cta block w-full rounded-[14px] py-[14px] text-center text-[17px]"
               >
