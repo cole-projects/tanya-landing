@@ -4,3 +4,7 @@ dist
 *.local
 .vercel
 Demo Video.mov
+
+# Env files — keep .env.example as the public template only
+.env*
+!.env.example
