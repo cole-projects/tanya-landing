@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import LandingShell from "../components/LandingShell.jsx";
 import LandingHeroCard from "../components/LandingHeroCard.jsx";
 import LearnMoreAccordion from "../components/LearnMoreAccordion.jsx";
@@ -30,6 +30,34 @@ export default function HomePage() {
 
   const closeTerms = () => setShowTerms(false);
 
+  const playerRef = useRef(null);
+  const firedRef = useRef(false);
+
+  useEffect(() => {
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+
+    window.onYouTubeIframeAPIReady = () => {
+      playerRef.current = new window.YT.Player("yt-demo", {
+        events: {
+          onStateChange: (e) => {
+            if (e.data === window.YT.PlayerState.PLAYING && !firedRef.current) {
+              firedRef.current = true;
+              const eventId = crypto.randomUUID();
+              window.fbq?.("trackCustom", "WatchedDemo", {}, { eventID: eventId });
+              fetch("/api/track", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ event_id: eventId, event_name: "WatchedDemo" }),
+              }).catch(() => {});
+            }
+          },
+        },
+      });
+    };
+  }, []);
+
   return (
     <LandingShell loose>
       <div
@@ -41,7 +69,8 @@ export default function HomePage() {
           <p className="mb-3 text-center text-sm font-medium text-[#6b5c4a]/70">See it in action</p>
           <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ aspectRatio: "9/16" }}>
             <iframe
-              src="https://www.youtube.com/embed/7udtah5_W_g"
+              id="yt-demo"
+              src="https://www.youtube.com/embed/7udtah5_W_g?enablejsapi=1"
               title="What is TanyaTalk?"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
