@@ -45,9 +45,6 @@ export default function TermsSheet({ isOpen, onClose }) {
               <p className="text-[17px] font-semibold leading-tight tracking-tight text-[#1c1c1e]">
                 TanyaTalk
               </p>
-              <p className="mt-0.5 text-[13px] text-[#8e8e93]">
-                tanyatalk.ai
-              </p>
             </div>
 
             {/* Divider */}
