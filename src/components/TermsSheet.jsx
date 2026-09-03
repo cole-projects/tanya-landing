@@ -49,7 +49,7 @@ export default function TermsSheet({ isOpen, onClose }) {
                 Your conversations are private and secure. TanyaTalk is a coaching tool, not
                 a replacement for therapy or crisis support. For adults 18+.{" "}
                 <a
-                  href="/terms"
+                  href="/terms.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#007aff] underline-offset-2 hover:underline"
