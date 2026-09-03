@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import RedirectHash from "./components/RedirectHash.jsx";
 import SiteLayout from "./layouts/SiteLayout.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import TermsPage from "./pages/TermsPage.jsx";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           element={<RedirectHash hash="who-is-tanya" />}
         />
       </Route>
+      <Route path="/terms" element={<TermsPage />} />
     </Routes>
   );
 }

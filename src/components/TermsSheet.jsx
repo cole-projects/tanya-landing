@@ -1,13 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { SMS_LINK, TERMS_ACCEPTED_KEY } from "../content/brand.js";
 
-const PARAGRAPHS = [
-  "Hi, I'm Tanya. I've spent years helping people work through what's on their mind, and I'm here for you too. Everything here is built with my heart, so you always have someone to come to whenever you need it, 24/7.",
-  "Your conversations are stored securely and encrypted. They exist to help me remember you and go deeper with you over time -- not to be read casually or shared. To protect the quality of what I offer, I may occasionally review conversations to improve the experience. You can cancel anytime by texting 'cancel subscription', and your profile stays intact so I remember you if you come back. If you ever want everything permanently deleted, just text 'delete my data' and it's gone.",
-  "TanyaTalk is a coaching tool built for reflection, clarity, and growth. Tanya is not a licensed therapist, and TanyaTalk is not a replacement for therapy, medical care, or crisis support. If you are in crisis or need immediate help, please reach out to a qualified professional or call 988. By continuing, you agree to use TanyaTalk as the coaching companion it is. TanyaTalk is intended for adults 18 and older.",
-  "When you're ready, the more you share with TanyaTalk, the deeper you can go together. You don't have to have everything figured out, just start wherever you are.",
-];
-
 export default function TermsSheet({ isOpen, onClose }) {
   return (
     <AnimatePresence>
@@ -50,15 +43,20 @@ export default function TermsSheet({ isOpen, onClose }) {
             {/* Divider */}
             <div className="h-px bg-[#e5e5ea]" />
 
-            {/* Scrollable body */}
-            <div className="max-h-[38vh] overflow-y-auto overscroll-contain px-6 py-4">
-              <div className="space-y-3.5">
-                {PARAGRAPHS.map((para, i) => (
-                  <p key={i} className="text-[14px] leading-relaxed text-[#3a3a3c]">
-                    {para}
-                  </p>
-                ))}
-              </div>
+            {/* Body */}
+            <div className="px-6 py-4">
+              <p className="text-[14px] leading-relaxed text-[#3a3a3c]">
+                Your conversations are private and secure. TanyaTalk is a coaching tool, not
+                a replacement for therapy or crisis support. For adults 18+.{" "}
+                <a
+                  href="/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#007aff] underline-offset-2 hover:underline"
+                >
+                  Read full terms
+                </a>
+              </p>
             </div>
 
             {/* Divider */}
