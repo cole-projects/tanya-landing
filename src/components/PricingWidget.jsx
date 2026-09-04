@@ -94,7 +94,7 @@ export default function PricingWidget() {
               <div className="mt-5 flex flex-col items-center">
                 <VCardLink className="mx-auto block w-fit" onClick={openTerms}>Add contact</VCardLink>
                 <p className="mt-2.5 text-center text-xs leading-snug text-sea-700/60">
-                  Test it free for 25 messages. No signup required, no credit card. Love it? $21/month to get started.
+                  Test it free for 15 messages. No signup required, no credit card. Love it? $21/month to get started.
                 </p>
               </div>
             </motion.div>

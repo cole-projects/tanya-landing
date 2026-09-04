@@ -65,7 +65,7 @@ export default function TermsSheet({ isOpen, onClose }) {
             {/* Footer */}
             <div className="px-6 pb-8 pt-4">
               <p className="mb-4 text-center text-[12px] leading-snug text-[#8e8e93]">
-                Your first 25 messages are free, no credit card needed.
+                Your first 15 messages are free, no credit card needed.
               </p>
 
               <a

@@ -58,7 +58,7 @@ export default function Wordmark({ onOpenTerms }) {
       </p>
       <VCardLink onClick={onOpenTerms} className="mx-auto mt-6 block w-fit">Start on iMessage</VCardLink>
       <p className="mt-2.5 text-center text-xs leading-snug text-[#6b5c4a]/60">
-        Test it free for 25 messages. No signup required, no credit card.
+        Test it free for 15 messages. No signup required, no credit card.
       </p>
       <div className="mt-4 flex items-center justify-center gap-3">
         <div ref={messagesRef} className="flex items-center gap-1.5 rounded-full bg-white/60 px-3 py-1.5 text-xs font-medium text-sea-800/80 ring-1 ring-sea-200/60 backdrop-blur-sm">
