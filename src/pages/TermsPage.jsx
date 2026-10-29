@@ -31,6 +31,14 @@ export default function TermsPage() {
           </p>
 
           <p>
+            Starting is completely free. Your first 15 messages require no credit card
+            and no signup. Just start the conversation. If you want to keep going after
+            that, a subscription is $21 per month. You can cancel anytime by texting
+            "cancel subscription" and you will never be charged without choosing to
+            continue.
+          </p>
+
+          <p>
             When you're ready, the more you share with TanyaTalk, the deeper you can go
             together. You don't have to have everything figured out. Just start wherever
             you are.

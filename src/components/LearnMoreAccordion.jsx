@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { MotionGlassPanel } from "./GlassPanel.jsx";
 import VCardLink from "./VCardLink.jsx";
@@ -171,8 +171,15 @@ export function WhatIsTanyaTalk({ onOpenTerms }) {
           <p className="mx-auto mt-8 max-w-xl text-center text-lg font-semibold leading-relaxed text-sea-900 sm:mt-10 sm:text-xl">
             That&apos;s TanyaTalk, right in your pocket!
           </p>
-          <div className="flex justify-center mt-8 sm:mt-9">
+          <div className="flex flex-col items-center mt-8 sm:mt-9 gap-2">
             <VCardLink className="" onClick={onOpenTerms}>Start on iMessage</VCardLink>
+            <p className="text-center text-xs leading-snug text-[#6b5c4a]/45">
+              By continuing you agree to our{" "}
+              <a href="/terms" className="underline underline-offset-2 hover:text-[#6b5c4a]/70">
+                Terms of Service
+              </a>
+              .
+            </p>
           </div>
         </div>
       </Panel>
@@ -180,13 +187,49 @@ export function WhatIsTanyaTalk({ onOpenTerms }) {
   );
 }
 
+function Confetti() {
+  return (
+    <div className="pointer-events-none fixed inset-0 overflow-hidden">
+      {Array.from({ length: 50 }).map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-2 h-2 rounded-full"
+          style={{
+            left: `${Math.random() * 100}%`,
+            background: ["#FF6B6B", "#4ECDC4", "#FFE66D", "#95E1D3", "#F38181"][Math.floor(Math.random() * 5)],
+          }}
+          initial={{ opacity: 1, y: -20 }}
+          animate={{ opacity: 0, y: window.innerHeight + 20 }}
+          transition={{ duration: 2.5, ease: "easeIn" }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export function WhoIsTanya() {
+  const [tapCount, setTapCount] = useState(0);
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  const handleImageTap = () => {
+    const newCount = tapCount + 1;
+    setTapCount(newCount);
+    if (newCount === 5) {
+      setShowConfetti(true);
+      setTimeout(() => {
+        setShowConfetti(false);
+        setTapCount(0);
+      }, 2500);
+    }
+  };
+
   return (
     <section
       id="who-is-tanya"
       className="w-full min-w-0 max-w-2xl scroll-mt-6 sm:scroll-mt-8"
       aria-labelledby="who-is-tanya-heading"
     >
+      {showConfetti && <Confetti />}
       <Panel>
         <h2
           id="who-is-tanya-heading"
@@ -199,8 +242,9 @@ export function WhoIsTanya() {
             <img
               src="/tanya-who.png"
               alt={WHO_SECTION_PHOTO_ALT}
-              className="mx-auto aspect-[3/4] w-full max-w-[190px] rounded-2xl object-cover object-[center_20%] shadow-md ring-1 ring-sea-900/10"
+              className="mx-auto aspect-[3/4] w-full max-w-[190px] rounded-2xl object-cover object-[center_20%] shadow-md ring-1 ring-sea-900/10 cursor-pointer transition-opacity hover:opacity-80"
               decoding="async"
+              onClick={handleImageTap}
             />
             <div className="mx-auto mt-4 max-w-xs rounded-2xl bg-sea-100/70 px-4 py-3 ring-1 ring-sea-200/60">
               <p className="mb-2 text-center text-xs font-semibold uppercase tracking-widest text-sea-600">

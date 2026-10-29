@@ -58,6 +58,7 @@ function vcfDownloadPlugin() {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   const siteUrl = (env.VITE_SITE_URL || "").replace(/\/$/, "");
+  const disableHmr = env.DISABLE_HMR === "1";
 
   return {
     server: {
@@ -66,6 +67,9 @@ export default defineConfig(({ mode }) => {
       port: 5173,
       /** Allow `.local` and other LAN hostnames (avoids Vite 403 “host not allowed” on some phones). */
       allowedHosts: true,
+      /** Tunnel / phone testing: set DISABLE_HMR=1 so Safari loads modules without a broken WebSocket. */
+      hmr: disableHmr ? false : undefined,
+      ...(env.VITE_DEV_ORIGIN ? { origin: env.VITE_DEV_ORIGIN.replace(/\/$/, "") } : {}),
     },
     preview: {
       host: true,

@@ -1,17 +1,14 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import LandingShell from "../components/LandingShell.jsx";
-import LandingHeroCard from "../components/LandingHeroCard.jsx";
+import LandingHero from "../components/LandingHero.jsx";
+import HeroAnonymousTestimonial from "../components/HeroAnonymousTestimonial.jsx";
 import LearnMoreAccordion from "../components/LearnMoreAccordion.jsx";
-import TermsSheet from "../components/TermsSheet.jsx";
-import Wordmark from "../components/Wordmark.jsx";
 import { MotionGlassPanel } from "../components/GlassPanel.jsx";
 import Sparkles from "../components/Sparkles.jsx";
 import { brandEase, rise } from "../lib/motion.js";
-import { BEACH_FOOTER_IMAGE_ALT, SMS_LINK, TERMS_ACCEPTED_KEY } from "../content/brand.js";
+import { BEACH_FOOTER_IMAGE_ALT, SMS_LINK } from "../content/brand.js";
 
 export default function HomePage() {
-  const [showTerms, setShowTerms] = useState(false);
-
   const openTerms = () => {
     const eventId = crypto.randomUUID();
     window.fbq?.("trackCustom", "StartIMessage", {}, { eventID: eventId });
@@ -20,15 +17,8 @@ export default function HomePage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ event_id: eventId }),
     }).catch(() => {});
-
-    if (localStorage.getItem(TERMS_ACCEPTED_KEY)) {
-      window.location.href = SMS_LINK;
-    } else {
-      setShowTerms(true);
-    }
+    window.location.href = SMS_LINK;
   };
-
-  const closeTerms = () => setShowTerms(false);
 
   const playerRef = useRef(null);
   const firedRef = useRef(false);
@@ -59,28 +49,26 @@ export default function HomePage() {
   }, []);
 
   return (
-    <LandingShell loose>
-      <div
-        id="top"
-        className="flex w-full min-w-0 max-w-2xl flex-col items-center scroll-mt-6 sm:scroll-mt-8"
-      >
-        <Wordmark onOpenTerms={openTerms} />
-        <section className="w-full min-w-0 max-w-xs mt-1 mb-6">
-          <p className="mb-3 text-center text-sm font-medium text-[#6b5c4a]/70">See it in action</p>
-          <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ aspectRatio: "9/16" }}>
-            <iframe
-              id="yt-demo"
-              src="https://www.youtube.com/embed/7udtah5_W_g?enablejsapi=1"
-              title="What is TanyaTalk?"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 h-full w-full"
-              style={{ border: "none" }}
-            />
-          </div>
-        </section>
-        <LandingHeroCard onOpenTerms={openTerms} />
-      </div>
+    <LandingShell loose hero>
+      <LandingHero onOpenTerms={openTerms} />
+
+      <HeroAnonymousTestimonial />
+
+      <section className="w-full min-w-0 max-w-[440px]">
+        <p className="mb-3 text-center text-sm font-medium text-[#6b5c4a]/70">See it in action</p>
+        <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ aspectRatio: "9/16" }}>
+          <iframe
+            id="yt-demo"
+            src="https://www.youtube.com/embed/7udtah5_W_g?enablejsapi=1"
+            title="What is TanyaTalk?"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 h-full w-full"
+            style={{ border: "none" }}
+          />
+        </div>
+      </section>
+
       <LearnMoreAccordion onOpenTerms={openTerms} />
       <figure className="w-full min-w-0 max-w-2xl">
         <img
@@ -101,8 +89,8 @@ export default function HomePage() {
           className="relative overflow-hidden rounded-[1.35rem] p-0"
           style={{
             background: "linear-gradient(145deg, #1ab5ae 0%, #0e9e97 50%, #0b8c86 100%)",
-            border: "1px solid rgba(255,255,255,0.18)",
-            boxShadow: "0 24px 70px rgba(14, 158, 151, 0.28), 0 2px 14px rgba(14, 158, 151, 0.18), inset 0 1px 0 rgba(255,255,255,0.25)",
+            border: "1px solid rgba(255, 255, 255, 0.18)",
+            boxShadow: "0 24px 70px rgba(14, 158, 151, 0.28), 0 2px 14px rgba(14, 158, 151, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25)",
           }}
           initial={rise.initial}
           whileInView={rise.animate}
@@ -136,8 +124,6 @@ export default function HomePage() {
           </div>
         </MotionGlassPanel>
       </section>
-
-      <TermsSheet isOpen={showTerms} onClose={closeTerms} />
     </LandingShell>
   );
 }
